@@ -1,0 +1,10 @@
+1ea2814c747512bd54d26d78c1bfd8834c026be3
+dropwizard
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Fix test for CVE-2202-42889 in EnvironmentVariableSubstitutorTest
+
+Refs 16e1afaf52b7772c0c880d52d2fb3bf7af14ccca

@@ -1,0 +1,23 @@
+d7f112e8e1b1125475b5bbc0c22fae75068fd507
+error-prone
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Upgrade java-diff-utils 4.0 -> 4.12
+
+This drops the indirect dependency on `org.eclipse.jgit`, guaranteeing
+that CVE-2023-4759 is mitigated.
+
+Resolves #4081.
+
+See:
+- https://nvd.nist.gov/vuln/detail/CVE-2023-4759
+- https://github.com/java-diff-utils/java-diff-utils/releases/tag/java-diff-utils-parent-4.12
+- https://github.com/java-diff-utils/java-diff-utils/compare/java-diff-utils-4.0...java-diff-utils-parent-4.12
+
+Fixes #4085
+
+COPYBARA_INTEGRATE_REVIEW=https://github.com/google/error-prone/pull/4085 from PicnicSupermarket:sschroevers/upgrade-java-diff-utils bf4e9063d4805d8bd85418921fc022357b8df0a3
+PiperOrigin-RevId: 565386924

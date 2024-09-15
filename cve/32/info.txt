@@ -1,0 +1,15 @@
+af6fbc77eb40260d7538fc044ff8494ea3c72d4d
+OpenSearch
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Improving the Grok circular reference check to prevent stack overflow (#1079)
+
+This change refactors the circular reference check in the Grok processor class
+to use a formal depth-first traversal. It also includes a logic update to
+prevent a stack overflow in one scenario and a check for malformed patterns.
+This bugfix addresses CVE-2021-22144.
+
+Signed-off-by: Kartik Ganesh <85275476+kartg@users.noreply.github.com>

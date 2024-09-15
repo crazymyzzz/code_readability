@@ -1,0 +1,22 @@
+e361d8e8efc67fd3c2f12300b175795549282b78
+flyway
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Bump version to flyway-9.6.0
+
+Please see the GH release for the release notes
+
+Move SQLFluff specific components into own module
+
+Add error override behavior to exclude full message
+
+Bump hsqldb version to resolve CVE-2022-41853
+
+fix #3489: PostgreSQL history table indexes and constraints now use the configured tablespace
+
+Fix #3516: Drop PostgreSQL domains with CASCADE
+
+Add support for building a darwin-arm64 flyway-commandline assembly

@@ -1,0 +1,26 @@
+adfd393739dd6960d3fa5ff52f610a528216e895
+flowable-engine
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ ['LoanRequest.java', 'ManagementServiceTest.java', 'FieldAccessJPAEntity.java', 'PropertyAccessJPAEntity.java']
+
+-------------------------------------------------------------------------------------------------
+h2 update 2.0.206 (#3176)
+
+* updated h2 to 2.0.206; fixes CVE-2021-42392 vulnerability
+
+* explicit column mapping in order to support updated h2
+
+* added h2 column type
+
+* delegate create, drop and update to CommonSchemaManager
+
+* explicit column mapping in order to support updated h2
+
+* added h2 column type
+
+* explicit column mapping in order to support updated h2
+
+* changed GenerationType to AUTO
+
+can be changed backed when https://github.com/hibernate/hibernate-orm/pull/4524 is on Hibernate 5.6.x

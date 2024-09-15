@@ -1,0 +1,10 @@
+1bc3bcb2848f478fd6674487d6dad507fd5dd686
+tomcat
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Fix XSS issue in Manager and Host Manager. This is CVE-2007-2450.
+
+git-svn-id: https://svn.apache.org/repos/asf/tomcat/tc6.0.x/trunk@547077 13f79535-47bb-0310-9956-ffa450edef68

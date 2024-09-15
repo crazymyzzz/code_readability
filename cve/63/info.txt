@@ -1,0 +1,13 @@
+6b61911f94d6d8d49ee933c5f1882a7e7c336d2c
+tomcat
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Remove 3 of the essentially 4 duplicate normalise implementations.
+Minor tweaks where required to use the new single implementation.
+Remove unnecessary normalisation calls.
+This includes the fix for CVE-2008-5515.
+
+git-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@734734 13f79535-47bb-0310-9956-ffa450edef68

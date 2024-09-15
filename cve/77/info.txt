@@ -1,0 +1,11 @@
+639e20992a66d7a42fb59c974db91c8a0f730a1e
+tomcat
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Add additional configuration options to the DIGEST authenticator
+This is the fix for CVE-2011-1184
+
+git-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@1087655 13f79535-47bb-0310-9956-ffa450edef68

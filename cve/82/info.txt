@@ -1,0 +1,11 @@
+763a56b45999653ce648a18462b8a826809215b1
+tomcat
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Fix CVE-2011-2204.
+Prevent user passwords appearing in log files if a runtime exception (e.g. OOME) occurs while creating a new user for a MemoryUserDatabase via JMX.
+
+git-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@1140070 13f79535-47bb-0310-9956-ffa450edef68

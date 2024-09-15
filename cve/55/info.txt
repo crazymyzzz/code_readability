@@ -1,0 +1,12 @@
+f608dcade2a56a4717aedb78aa37f3acafd7352f
+flyway
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Bump version to flyway-10.15.1
+
+Please see the GH release for the release notes
+
+Bump msal4j to 1.15.1 to fix CVE-2024-35255

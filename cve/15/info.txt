@@ -1,0 +1,41 @@
+e487e255849f24ea2ed5ae65c0cb8be8a9897455
+jdk
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+6797688: Umbrella: Merge all JDK 6u4 - 6u12 deployment code into JDK7
+6845973: Update JDK7 with deployment changes in 6u13, 6u14
+4802695: Support 64-bit Java Plug-in and Java webstart on Windows/Linux on AMD64
+6825019: DownloadManager should not be loaded and referenced for full JRE
+6738770: REGRESSION:JSException throws when use LiveConnect javascript facility
+6772884: plugin2 : java.lang.OutOfMemoryError or crash
+6707535: Crossing domain hole affecting multiple sites/domains using plug-in
+6728071: Non-verification of Update files may allow unintended updates
+6704154: Code loaded from local filesystem should not get access to localhost
+6727081: Web Start security restrictions bypass using special extension jnlp
+6727079: Java Web Start Socket() restriction bypass
+6727071: Cache location/user name information disclosure in SingleInstanceImpl
+6716217: AppletClassLoader adds permissions based on codebase regardless of CS
+6694892: Java Webstart inclusion via system properties override [CVE-2008-2086]
+6704074: localhost socket access due to cache location exposed
+6703909: Java webstart arbitrary file creation using nativelib
+6665315: browser crashes when deployment.properties has more slashes ( / )
+6660121: Encoding values in JNLP files can cause buffer overflow
+6606110: URLConnection.setProxiedHost for resources that are loaded via proxy
+6581221: SSV(VISTA): Redirection FAILS to work if user does a downgrade install
+6609756: Buffer Overflow in Java ActiveX component
+6608712: Bypassing the same origin policy in Java with crafted names
+6534630: "gnumake clobber" doesn't
+6849953: JDK7 - replacement of bufferoverflowU.lib on amd64 breaks build
+6849029: Need some JDK7 merge clean-up after comments on the webrev
+6847582: Build problem on JDK7 with isSecureProperty in merge
+6827935: JDK 7 deployment merging - problem in Compiler-msvm.gmk
+6823215: latest merge fixes from 6u12 -> JDK7
+6816153: further mergers for JDK7 deployment integration
+6807074: Fix Java Kernel and JQS in initial JDK7 builds
+
+Initial changeset for implementing 6uX Deployment Features into JDK7
+
+Reviewed-by: dgu, billyh

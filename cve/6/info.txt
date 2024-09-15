@@ -1,0 +1,16 @@
+feb83a1c8fd2e7670b244d5afd23cba5aca43284
+guava
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ ['FileBackedOutputStreamTest.java', 'FilesCreateTempDirTest.java', 'FileBackedOutputStream.java', 'Files.java', 'IgnoreJRERequirement.java', 'TempFileCreator.java']
+
+-------------------------------------------------------------------------------------------------
+Restrict permissions when creating temporary files and directories, or fail if that's not possible.
+
+(Also, check that the provided `fileThreshold` is non-negative.)
+
+- Fixes https://github.com/google/guava/issues/2575
+- Fixes https://github.com/google/guava/issues/4011
+
+RELNOTES=Reimplemented `Files.createTempDir` and `FileBackedOutputStream` to further address [CVE-2020-8908](https://github.com/google/guava/issues/4011) and [Guava issue #2575](https://github.com/google/guava/issues/2575) (CVE forthcoming).
+PiperOrigin-RevId: 535359233

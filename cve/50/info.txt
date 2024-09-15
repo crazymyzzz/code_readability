@@ -1,0 +1,14 @@
+7c498113f2518c23e7e953c09194ee84ec5b1908
+flyway
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Bump version to flyway-9.19.1
+
+Please see the GH release for the release notes
+
+Fix exit code when report is disabled and error occurs
+
+update sqlite driver version to avoid CVE-2023-32697

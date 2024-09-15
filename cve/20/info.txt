@@ -1,0 +1,10 @@
+cdd9ce5bcc0cbbc3cc23a34f3c980fb2dff17616
+quarkus
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Enforce the configured TLS version
+
+Fix https://access.redhat.com/security/cve/cve-2023-2974

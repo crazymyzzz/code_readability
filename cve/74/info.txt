@@ -1,0 +1,12 @@
+d2e8f2ede7dea39f75f68384f331f38f094e4ed3
+tomcat
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Move the processor.recycle calls to just before the point where the processor is returned to the pool. This ensures returned processors are recycled (this could have been skipped on some exception paths)
+Possible contributing factor to https://issues.apache.org/bugzilla/show_bug.cgi?id=50957 ?
+This is part of the fix for CVE-2011-1475
+
+git-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@1086349 13f79535-47bb-0310-9956-ffa450edef68

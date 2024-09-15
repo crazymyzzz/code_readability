@@ -1,0 +1,17 @@
+dbebd79013b561ffc82bc2da85872bd32fe178fd
+trino
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Bump Airbase to 126
+
+* Version 125 brings (among other things) updated dependency on Jackson,
+  which fixes at least one CVE. Dependency on snakeyaml needs to be
+  bumped to avoid conflicts with transitive dependencies.
+
+* Version 126 brings fixes to how locale information is passed to Maven
+  Surefire plugin. In relation to that, this commit adds a test to
+  verify that the system locale is actually properly configured in the
+  JVM.

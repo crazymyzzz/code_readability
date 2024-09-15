@@ -1,0 +1,18 @@
+5c8560f3054982abaa476d87ec031c439d58d66e
+tomcat
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+CVE-2011-1088
+Start of fix for issue reported on users list that @ServletSecurity annotations were ignored.
+This fix is not yet complete. This first part:
+- Triggers the loading of the Wrapper before the constraints are processed to ensure that any @ServletSecurity annotations are taken account of
+- Makes sure the constraints collection is thread-safe given new usage
+- Adds scanning for @ServletSecurity when a Servlet is loaded
+- Ensure there is always an authenticator when using the embedded Tomcat class so that @ServletSecurity will have an effect
+- Adds a simple unit test to check @ServletSecurity annotations are processed
+Further commits will add additional test cases and any changes required for those test cases to pass
+
+git-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@1076586 13f79535-47bb-0310-9956-ffa450edef68

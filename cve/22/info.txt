@@ -1,0 +1,11 @@
+c65d982c43fdb9aa32a8af6e684170f4f6bc6ff1
+quarkus
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Update to HTMLUnit 4.1.0
+
+- This changes the package names and the artifact GA
+- Fixes CVE-2023-26119

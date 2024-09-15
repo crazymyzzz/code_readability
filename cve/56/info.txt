@@ -1,0 +1,23 @@
+595076c21573b96b73c4d8b1c6808ad6134e99ee
+testcontainers-java
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+SnakeYaml SafeConstructor restricting deserialization (#6319)
+
+ParsedDockerComposeFile is vulnerable to deserialization gadget chain attacks
+that can lead to remote code execution when the file has untrusted content:
+https://nvd.nist.gov/vuln/detail/CVE-2022-1471
+
+This should be fixed by using SafeConstructor as suggested by the SnakeYaml
+developers.
+
+Deserialization of arbitrary Java types is not used by the Compose file spec
+and therefore can be disabled without any loss of functionality:
+https://docs.docker.com/compose/compose-file/
+
+---------
+
+Co-authored-by: Eddú Meléndez Gonzales <eddu.melendez@gmail.com>

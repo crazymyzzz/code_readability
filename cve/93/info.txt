@@ -1,0 +1,12 @@
+d83a76732e6804739b81d8b2056365307637b42d
+tomcat
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Fix https://bz.apache.org/bugzilla/show_bug.cgi?id=62343
+Make CORS filter defaults more secure.
+This is the fix for CVE-2018-8014.
+
+git-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@1831726 13f79535-47bb-0310-9956-ffa450edef68

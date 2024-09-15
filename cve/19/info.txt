@@ -1,0 +1,21 @@
+157277bf7f417deca5b818b4543f83f98a056db1
+tink
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Fixing ECDH tests.
+
+1/ Catching unchecked exceptions to not crash the JVM.
+
+Wycheproof found that some Java security providers would throw unchecked exceptions when processing attacker-controlled input. To prevent DoS attacks, we'd catch these exceptions in Tink.
+
+2/ Do not report errors if the shared secret is correct.
+
+Android M and N ignore the public key parameters, thus we'd stop reporting errors in tests that modify parameters if the shared secret is still correct.
+
+3/ Skipping CVE-2017-10176 test because it's not a severe issue.
+
+PiperOrigin-RevId: 191113399
+GitOrigin-RevId: b069f3af3f515b30b5cc1e2af791b226fb0635c5

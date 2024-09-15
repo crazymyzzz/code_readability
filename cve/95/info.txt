@@ -1,0 +1,15 @@
+4b244d827ade2a36ef3b8734939541207b78f35c
+tomcat
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Limit CGI command line arguments
+
+Limit the decoded form of individual command line arguments. This is to
+work various issues passing command line arguments from Java to the OS
+on Windows.
+This restriction may be overridden by the new initialisation parameter
+cmdLineArgumentsDecoded.
+This is the fix for CVE-2019-0232.

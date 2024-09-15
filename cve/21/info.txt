@@ -1,0 +1,11 @@
+53d39739bc8d6af2c2fefe4a53494fc3d92908f9
+quarkus
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Update to Vert.x 4.5.2
+
+- Contains the fix for https://access.redhat.com/security/cve/cve-2024-1023.
+- The pretty JSON mapper is deprecated

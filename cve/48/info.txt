@@ -1,0 +1,16 @@
+a961eafd4068e9358064dc0cdfa3c4413c13440d
+flyway
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Bump version to flyway-9.15.2
+
+Please see the GH release for the release notes
+
+Update Java17 build to profile
+
+fix detection of conditionally creatable objects in snowflake parser
+
+Update Ant to address CVE-2020-11979, CVE-2021-36374, CVE-2021-36373 and CVE-2020-1945

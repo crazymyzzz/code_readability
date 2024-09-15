@@ -1,0 +1,21 @@
+60a5ad1900fced203bd55b83cb5c857a7f452895
+flyway
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Refactor Flyway Command-Line main method
+Closes #3664: Bump Snowflake JDBC to 3.13.30 @sseide
+Bump SQLite JDBC to 3.41.2.1 to address CVE-2021-20227, CVE-2022-35737 and CVE-2022-46908 @sseide
+Bump MariaDB JDBC to 2.7.9 to address multiple issues @sseide
+Closes #3648: Ensure Flyway uses ALL_CREDENTIALS when using versions of Oracle where ALL_SCHEDULER_CREDENTIALS is deprecated
+update version of msal4j to fix vulnerability
+allow escaped single quotes in SQL string literals
+Closes #3621: allow escaped single quotes in SQL string literals
+Update version of snowflake-jdbc to fix SNYK-JAVA-NETSNOWFLAKE-5425048
+Remove redundant edition flags documentation
+Remove migrations testing tutorial
+Adding Flyway Reports; Single file HTML reports that expose important details and stats about your Flyway pipeline in an easy to read and share format.
+Closes #3652: Remove redundant html extension on automatically generated reports and empty reports
+add direct support for Alpine linux

@@ -1,0 +1,11 @@
+40e5880dfc51517334acda5f12beacdec52ca283
+tomcat
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Arrange filter logic.
+This is the fix for CVE-2010-2227.
+
+git-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@958911 13f79535-47bb-0310-9956-ffa450edef68

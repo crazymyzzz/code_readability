@@ -1,0 +1,12 @@
+a2538ce78f83b7376c48d12d8247600079d789b1
+tomcat
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Fix https://issues.apache.org/bugzilla/show_bug.cgi?id=51698
+Fix CVE-2011-3190
+Prevent AJP request forgery via unread request body packet
+
+git-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@1162957 13f79535-47bb-0310-9956-ffa450edef68

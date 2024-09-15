@@ -1,0 +1,13 @@
+0ff4905158b77787a7f3aca55c9dec93456665dc
+tomcat
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+CVE-2011-1088
+Complete the fix for this issue. The optimisation not to configure an authenticator of there were no security constraints meant that in that case @ServletSecurity annotations had no effect. The unit tests did not pick this up since they added an authenticator directly.
+Add an explicit unit test for this scenario.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@1079752 13f79535-47bb-0310-9956-ffa450edef68

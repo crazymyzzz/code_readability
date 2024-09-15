@@ -1,0 +1,22 @@
+d38d8c316bb0a61e8088a52b539ef742987a37c2
+flyway
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Bump version to flyway-10.9.0
+
+Please see the GH release for the release notes
+
+Update Flyway-Community-DB-Support version and reintroduce Oceanblue
+
+Update Mongo JDBC driver to 1.19
+
+Bump Project Lombok to 1.18.30
+
+Closes #3847: Update postgres to 42.7.2 for CVE-2024-1597
+
+Closes #3843: Fixing merge issue for placeholders in TOML files
+
+Increase dependency software.amazon.awssdk:s3 to 2.21.46 to fix CVE-2023-44487

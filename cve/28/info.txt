@@ -1,0 +1,29 @@
+937fe89d2ec298fa60ae7b79c31abce51f573656
+trino
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Bump elasticsearch client version to 6.8.23
+
+The newer version addresses some critical CVEs and fixes some bugs
+regarding retry of failed requests being routed to dead hosts. It also
+makes the client work with ES 6.7 which had a breaking change causing
+older clients to not work with it in some cases.
+
+Elasticsearch clients are forward compatible and only guaranteed to work
+with servers with matching major versions. i.e. 6.8.23 client would work
+with 6.8.x and newer servers only. This also changes the
+TestElasticsearch6ConnectorTest to use 6.6.0 version for tests since
+that's the oldest version against which the connector passes all tests.
+
+This also adds comments explaining why an exclusion exists and also
+removes those that are no longer required - reducing the chances that
+someone runs into runtime errors if they do something which we don't
+explicitly test.
+
+Two new explicit dependencies on org.elasticsearch:elasticsearch-core
+and org.elasticsearch:elasticsearch-x-content are added because some
+classes from org.elasticsearch.common package were moved into separate
+modules.

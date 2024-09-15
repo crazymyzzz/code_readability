@@ -1,0 +1,11 @@
+b7e0435d17aba69f16ae9e8a78ad0f1565b552af
+tomcat
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Partial fix for CVE-2017-12617
+This ensures that a path specified for creation of a file does not end in '/' since that is dropped by the File API.
+
+git-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@1809025 13f79535-47bb-0310-9956-ffa450edef68

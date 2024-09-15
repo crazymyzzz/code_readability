@@ -1,0 +1,18 @@
+ead6a7a0b12b5aa3bcd63b2f9d4f34854357e5df
+flyway
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Bump version to flyway-9.7.0
+
+Please see the GH release for the release notes
+
+Add rule code to HTML report for code analysis
+
+Update MSAL4J to fix CVE-2022-42004
+
+fix #3552: Fix Snowflake parser to handle nested 'BEGIN...END' statements
+
+update aws-secretsmanager to fix CVE-2022-42004

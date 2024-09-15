@@ -1,0 +1,11 @@
+a4de93b2aaf74fff7c1e194f7ce3d2228a9680b8
+tomcat
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Fix CVE-2010-1157.
+Prevent possible disclosure of host name or IP address via the HTTP WWW-Authenticate header when using BASIC or DIGEST authentication.
+
+git-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@936539 13f79535-47bb-0310-9956-ffa450edef68

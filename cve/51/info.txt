@@ -1,0 +1,22 @@
+9abeef6dfceb7de626175a2e9584cacd9fbd723f
+flyway
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Bump version to flyway-9.20.1
+
+Please see the GH release for the release notes
+
+Closes #3700 Fix beta module releases (E.G. flyway-gcp-spanner)
+
+Upgrade AWS SDK to fix SNYK issue CVE-2023-34462
+
+Update Maven Version check to use Maven Metadata to avoid website deprecation issues
+
+Upgrade Google Cloud Secretmanager to fix SNYK-JAVA-COMGOOGLEGUAVA-5710356
+
+Upgrade Google Cloud Storage to fix SNYK-JAVA-COMGOOGLEGUAVA-5710356
+
+Update AWS Java SDK to fix SNYK-JAVA-IONETTY-5725787

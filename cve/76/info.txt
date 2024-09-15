@@ -1,0 +1,13 @@
+b7b5c63a932f6c1ea05f9b65ad9054247bb5af57
+tomcat
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Fix https://issues.apache.org/bugzilla/show_bug.cgi?id=12428
+Add optional support for preemptive authentication on a per context basis
+Based on a patch suggested by Werner Donn
+This includes the fix for CVE-2011-1183
+
+git-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@1087643 13f79535-47bb-0310-9956-ffa450edef68

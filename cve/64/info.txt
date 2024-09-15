@@ -1,0 +1,17 @@
+3e1010b1a2f648581fac3d68afbf18f2979f6bf6
+tomcat
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Various related (un)deploy improvements including:
+ - better handling of failed (un)deployment
+ - adding checking for valid zip file entries that don't make sense in a WAR file
+ - improved validation of WAR file names
+ - make sure error messages match the action
+ - the return from File.getCanonicalPath() may or may not return a final separator for directories
+
+This fixes CVE-2009-2693, CVE-2009-2901 & CVE-2009-2902
+
+git-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@892795 13f79535-47bb-0310-9956-ffa450edef68

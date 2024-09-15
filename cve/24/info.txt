@@ -1,0 +1,48 @@
+c56f41ce7702b0439a583abe5bb46e9f167e4c7d
+cas
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+fix velocity property keys to avoid deprecation warnings (#4187)
+
+* fix velocity property keys to avoid deprecation warnings
+
+WARN [org.apache.velocity.deprecation]
+ - <configuration key 'resource.loader' has been
+ deprecated in favor of 'resource.loaders'>
+WARN [org.apache.velocity.deprecation]
+ - <configuration key 'file.resource.loader.class' has been
+  deprecated in favor of 'resource.loader.file.class'>
+WARN [org.apache.velocity.deprecation]
+ - <configuration key 'string.resource.loader.class' has been
+  deprecated in favor of 'resource.loader.string.class'>
+WARN [org.apache.velocity.deprecation]
+ - <configuration key 'classpath.resource.loader.class' has been
+ deprecated in favor of 'resource.loader.classpath.class'>
+
+* support "merge" as alias for multivalued
+
+javadocs and docs all list MERGE as the value for multivalued/combine
+
+throw exception if merge policy name unknown b/c the default is probably
+not what anybody wants
+
+* Fix s3 aws test
+
+Disabled chunked encoding for tests:
+https://github.com/jubos/fake-s3/issues/164
+
+* Update documentation
+
+* Revert "Fix s3 aws test
+
+* aws test fix
+
+* update jackson and suppress cve, update javadoc
+
+update javadoc to match docs for MULTIVALUED vs MERGE
+MERGE should still be supported as alias for MULTIVALUED
+
+* address spotbugs finding -> NAB_NEEDLESS_BOOLEAN_CONSTANT_CONVERSION

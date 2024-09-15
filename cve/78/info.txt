@@ -1,0 +1,11 @@
+299b26af66793438c323ea6b18462fa44683080f
+tomcat
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Use the correct classloader
+This is the fix for CVE-2011-1582
+
+git-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@1100832 13f79535-47bb-0310-9956-ffa450edef68

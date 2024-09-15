@@ -1,0 +1,14 @@
+b577f9a7996b92b650b1649af3c3bae11c120db9
+tomcat
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Fix https://bz.apache.org/bugzilla/show_bug.cgi?id=61542
+Partial fix for CVE-2017-12617
+This moves a check from the Default servlet where it applied to GET, POST, HEAD and OPTIONS to the resources implementation where it applies to any method that expects the resource to exist (e.g.DELETE)
+Still need to address the case where the resource does not exist (e.g. PUT)
+
+
+git-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@1809011 13f79535-47bb-0310-9956-ffa450edef68

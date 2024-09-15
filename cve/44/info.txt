@@ -1,0 +1,20 @@
+ffe7df64dbb6f532380b989327b97b11cf354508
+flyway
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Bump version to flyway-9.5.0
+
+Please see the GH release for the release notes
+
+fix #3539: Add support for PostgreSQL 15
+
+fix #3519: SQLPlus - double &s for placeholders
+
+Update commons-text to fix vulnerability CVE-2022-42889
+
+Add edition to the version model
+
+When urls are unsupported by check, ascertain which ones are unsupported, and include them as part of the exception.

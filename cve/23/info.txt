@@ -1,0 +1,26 @@
+ac00735d423dce451c94273e01fa916867e07718
+conductor
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ ['AbstractEndToEndTest.java']
+
+-------------------------------------------------------------------------------------------------
+Fix CVEs in 3.16. (#46)
+
+* Upgraded ES7 to 7.17.16, alpine to 3.19
+
+* Update ElasticSearch to 7.17.16, some sdk tests are failing.
+
+* Server would not run, StackOverflow - 54742540 had this handy fix.
+
+* Use the new image in test container.
+
+* Update Spring Boot to 3.2.1. One failing test in end to end.
+
+* Handle the change in exceptions from Spring Framework.
+
+* Update AWS SDK for CVE fix.
+
+* Replace generic import with specific class.
+
+* Removed dependencies.lock file from projects. No longer used.

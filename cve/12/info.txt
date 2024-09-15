@@ -1,0 +1,12 @@
+46d3f2e1d0bee7098e630d9c6913fe25bb2b3753
+jenkins
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+[JENKINS-31598] upgrade commons-collections due to CVE against v3.2.1 (#2761)
+
+* [JENKINS-31598] upgrade commons-collections due to CVE against v3.2.1
+
+* Fix broken tests

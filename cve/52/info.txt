@@ -1,0 +1,16 @@
+f5336ea02881d410b130ffd69a0a3e59951a1c00
+flyway
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Bump version to flyway-10.8.0
+
+Please see the GH release for the release notes
+
+add db-specific info to oracle parsing errors
+
+Upgrade com.nimbusds:nimbus-jose-jwt@9.37.2 to fix CVE-2023-52428
+
+Downgrade MariaDB Connect/J to 2.7.11

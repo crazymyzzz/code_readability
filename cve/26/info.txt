@@ -1,0 +1,518 @@
+760c542a0b60b4c6f34c909bf4ede05ca588fbc7
+jjwt
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ ['SignatureAlgorithm.java', 'SignatureException.java']
+
+-------------------------------------------------------------------------------------------------
+JWE support (#279)
+
+* JWE support. Resolves #113
+
+Huge feature/code change - see CHANGELOG.MD for an in-depth review of changes.
+
+Commit note log:
+
+- Added JWE AeadAlgorithm and KeyAlgorithm and supporting interfaces/implementations, and refactored SignatureAlgorithm to be an interface instead of an enum to enable custom algorithms
+- NoneSignatureAlgorithm cleanup. Added UnsupportedKeyExceptionTest.
+- Added JWK support!
+
+* Removed the previous SignatureAlgorithm implementation concepts (Provider/Signer/Validator implementations).  Implementations are now interface-driven and fully pluggable.
+
+* adding tests, working towards 100% coverage.  Moved api static factory class tests to impl module to avoid mocking static calls due to bridge/reflection logic.
+
+* adding tests, removed unused class
+
+* implementation checkpoint (safety save)
+
+* clean build checkpoint
+
+* continued testing w/ more coverage.  Replaced PbeKey concept with PasswordKey
+
+* fixed erroneous optimize imports
+
+* Added ECDH-ES key algorithms + RFC tests
+
+* 1. Enabled targeted/limited use of BouncyCastle only when required by eliminating use of RuntimeEnvironment in favor of new Providers implementation.  JJWT will no longer modify the system providers list.
+2. Changed SecretKeyGenerator.generateKey() to KeyBuilderSupplier.keyBuilder() and a new SecretKeyBuilder interface.  This allows users to customize the Provider and SecureRandom used during key generation if desired.
+3. Added KeyLengthSupplier to allow certain algorithms the ability to determine a key bit length without forcing a key generation.
+4. Ensured Pbes2 algorithms defaulted to OWASP-recommended iteration counts if not specified by the user.
+
+* 1. EcdhKeyAlgorithm: consolidated duplicate logic to a single private helper method
+2. Updated RequiredTypeConverter exception message to represent the expected type as well as the found type
+
+* Minor javadoc update
+
+* 1. Javadoc cleanup.
+2. Ensured CompressionException extends from io.jsonwebtoken.io.IOException
+3. Deleted old POC unused JwkParser interface
+4. Ensured NoneSignatureAlgorithm reflected the correct exception message for `sign`
+
+* Fixed erroneous JavaDoc, enhanced code coverage for DefaultClaims
+
+* Added jwe compression test
+
+* Added TestKeys concept for Groovy test authoring
+
+* Added tests, cleaned up state assertions for code coverage
+
+* Added tests, cleaned up state assertions for code coverage
+
+* Removed unused code
+
+* Merge branch 'master' into jwe-merge
+
+* using groovy syntax to avoid conflict with legacy SignatureAlgorithm type
+
+* JavaDoc fixes
+
+* JavaDoc fixes, test additions to work on JDK >= 15
+
+* JavaDoc fixes, test additions to work on JDK 7 and JDK >= 15
+
+* Test adjustment to work on Java 7
+
+* Test adjustment to work on Java 7
+
+* code coverage work cont'd
+
+* code coverage work cont'd
+
+* JavaDoc fix
+
+* Update impl/src/main/java/io/jsonwebtoken/impl/JwtTokenizer.java
+
+Co-authored-by: sonatype-lift[bot] <37194012+sonatype-lift[bot]@users.noreply.github.com>
+
+* lift edits
+
+* lift edits
+
+* lift edits
+
+* code coverage testing cont'd
+
+* PayloadSupplier renamed to Message
+
+* Added new KeyPairBuilder/KeyPairBuilderSupplier for parity with KeyBuilder/KeyBuilderSupplier.  Switched all generate* calls to use the new API methods.
+
+* - Added lots of JavaDoc
+- JwtMap: Ensured Groovy GString implementations that invoke Groovy's InvokerHelper on a JwtMap implementation will print redacted values instead of the actual secret values.
+
+* - JavaDoc additions cont'd
+
+* - JavaDoc additions and syntax cleanup cont'd
+- Minor work to fix compilation errors on a few Groovy test classes
+
+* - JavaDoc additions and syntax cleanup cont'd
+- Minor work to fix compilation errors on a few Groovy test classes
+
+* - JavaDoc additions and syntax cleanup cont'd
+- Minor work to fix compilation errors on a few Groovy test classes
+
+* - JavaDoc additions and syntax cleanup cont'd
+- Minor work to fix compilation errors on a few Groovy test classes
+
+* - JavaDoc cont'd
+
+* Code coverage updates cont'd
+
+* Propagating exception wrapper function enhancements
+
+* 100% code coverage!
+
+* Minor test changes to work with JDK >= 11
+
+* Ensured all JWK secret or private values were wrapped in a RedactedSupplier instance to prevent accidental printing of secure values
+
+* - Updated JavaDoc to reflect JWK toString safety and property access
+- Updated README to reflect new GsonSerializer requirements for io.jsonwebtoken.lang.Supplier
+
+* Documentation enhancements
+
+* Fixed erroneous JavaDoc element
+
+* Fixed LocatorAdapter usage now that it's abstract
+
+* Minor JavaDoc fix
+
+* JavaDoc is now complete (no warnings) for api module
+
+* Ensured JWS signatures are computed first before deserializing the body if no SigningKeyResolver has been configured.
+
+* Removed EllipticCurveSignatureAlgorithm and RsaSignatureAlgorithm concepts due to some PKCS11 and HSM security providers that cannot provide keys that implement the ECKey or RSAKey interfaces.
+
+* Removed reliance on io.jsonwebtoken.security.KeyPair now that KeyPairBuilder implementations cannot guarantee RSAKey or ECKey types
+
+* Ensured RsaKeyAlgorithm used PublicKey and PrivateKey parameters due to PKCS11 and HSM key stores that may not expose the RSAKey interface on their RSA key implementations
+
+* cleaned up EC point addition/doubling logic to be more readable and match equations in literature
+
+* Deprecated JwtParserBuilder setSigningKey* methods in favor of verifyWith for name accuracy and congruence with decryptWith
+
+* Added PositiveIntegerConverter and PublicJwkConverter for JWE Header "p2c" and "jwk" fields
+
+* Ensured CompressionCodec inherited Identifiable for consistency w/ all other algorithms
+
+* Ensured CompressionCodec inherited Identifiable for consistency w/ all other algorithms
+
+* Ensured CompressionCodec inherited Identifiable for consistency w/ all other algorithms
+
+* JavaDoc enhancement
+
+* Added Jwks.parserBuilder(), JwkParserBuilder and JwkParser concepts
+
+* Ensured ProtoJwkBuilder method names were all congruent (remaining set* methods were renamed to for*)
+
+* Minor JavaDoc organization change
+
+* Changed JweBuilder to have only two encryptWith* methods for consistency with JwtBuilder signWith* methods.  Also prevents incorrect configuration by forgetting to call follow-up methods.
+
+* Removed DefaultValueGetter in favor of new FieldReadable concept to leverage Field instances instead of duplicating logic.
+
+* Adding copyright headers
+
+* Deprecated CompressionCodecResolver in favor of Locator<CompressionCodec>
+
+* Deprecated CompressionCodecResolver in favor of Locator<CompressionCodec>
+
+* Folded in JweBuilder concept and implementation into the existing JwtBuilder
+
+* Cleanup to reduce duplicate logic
+
+* Changed plaintext JWT payload type from String to byte[]
+
+* Minor internal doc fixes
+
+* - Added UnprotectedHeader interface
+- Renamed DefaultHeader to AbstractHeader
+- Renamed JwtParser 'plaintext'* methods to 'payload'* methods to more accurately reflect the JWT nomenclature
+
+* Updated changelog to reflect the following changes:
+- Added UnprotectedHeader interface
+- Renamed DefaultHeader to AbstractHeader
+- Renamed JwtParser 'plaintext'* methods to 'payload'* methods to more accurately reflect the JWT nomenclature
+
+* Adding RFC 7520 test cases.
+
+* Changed JwtBuilder/JwtParser/JwtHandler/JwtHandlerAdapter `payload` concept to `content` concept
+
+* JavaDoc error fix
+
+* Added JwtParserBuilder#addCompressionCodecs method and supporting tests
+
+* Updated changelog to reflect recent changes
+
+* doc updates
+
+* Fixed minor types in JWE related change log
+
+* Enabled Mutator and HeaderBuilder interfaces and implementations
+
+* Fixed erroneous JavaDoc
+
+* Added additional .pem files for testing PEM parsing (TBD at a later date)
+
+* Updating documentation to prepare for JWE release
+
+* more docs
+
+* docs cont'd
+
+* Update README.md
+
+Trying to prevent table wrap
+
+* Update README.md
+
+testing table whitespace wrap
+
+* Update README.md
+
+formatting testing
+
+* Update README.md
+
+formatting testing cont'd
+
+* docs cont'd
+
+* docs cont'd
+
+* docs cont'd
+
+* documentation checkpoint
+
+* documentation checkpoint, still work in progress
+
+* added extra info about Android BouncyCastle registration
+
+* added extra info about Android BouncyCastle registration
+
+* added extra info about Android BouncyCastle registration
+
+* documentation cont'd
+
+* documentation cont'd
+
+* documentation cont'd
+
+* documentation cont'd
+
+* documentation cont'd
+
+* Upgraded Jackson to 2.12.7 due to Jackson CVE
+
+* trying to get sonatype lift working again
+
+* Removed unnecessary println statement in test
+
+* Added JDK 19
+
+* Removing JDK 19 until we can resolve incompatible groovy version
+
+* doc formatting test
+
+* Update README.md
+
+Fixed 'JWE Encryption Algorithms' table formatting
+
+* renamed PasswordKey to just Password, removed unnecessary WrappedSecretKey class and its one usage in favor of JDK-standard SecretKeySpec
+
+* Updated PasswordKey references to Password
+
+* Renamed DefaultPassword to PasswordSpec while also implementing KeySpec per JDK conventions.
+
+* documentation cont'd
+
+* documentation cont'd
+
+* documentation cont'd
+
+* JWT expired exception is now shows difference as now - expired
+
+Instead of now + skew - expired
+
+Fixes: #660
+
+* documentation cont'd
+
+* Fixed erroneous error message (should be '521' not '512').
+
+* - Removed EcKeyAlgorithm and RsaKeyAlgorithm in favor of KeyAlgorithm<PublicKey, PrivateKey> due to HSM key types unable to conform to respective ECKey or RSAKey types
+- added Curve concept with DefaultCurve and ECCurve implementations for use across EC/EdEC SignatureAlgorithm and KeyAlgorithm implementations
+- disabled Zulu JDK 10 - compiler was failing, and that is a short-term-supported version anyway
+- added Temurin JDK 19 and Zulu JDK 19 to the build
+
+* Removed JDK 19 builds due to error with Groovy compiler version compatibility
+
+* removed unused test, created https://github.com/jwtk/jjwt/issues/765 to address later
+
+* updated test case to reflect Edwards keys algorithm name differences between BouncyCastle and JDK 11/15
+
+* - Reordered JwtBuilder .encryptWith method arguments to match signWith conventions
+- Added key validation logic to DefaultRsaKeyAlgorithm
+
+* - Reordered JwtBuilder .encryptWith method arguments to match signWith conventions
+- Added key validation logic to DefaultRsaKeyAlgorithm
+- Removed mutation methods on InvalidClaimException and its subclasses, IncorrectClaimException and MissingClaimException
+- renamed Jwks.parserBuilder() to Jwks.parser() to reduce verbosity since we'll never likely offer a Jwts.parser() that returns a Parser instance directly.
+
+* Documentation updates
+
+* Documentation updates
+
+* Documentation updates
+
+* Adding Java-based tests for README.md code snippets (e.g. new Examples section).
+
+* Testing README code snippet in examples
+
+* Testing README code snippet in examples
+
+* Testing README code snippet in examples
+
+* Ensured README.md examples would compile/run by testing code in a JavaReadmeTest.java class
+
+* Ensured README.md examples would compile/run by testing code in a JavaReadmeTest.java class
+
+* Ensured README.md examples would compile/run by testing code in a JavaReadmeTest.java class
+
+* Ensured README.md examples would compile/run by testing code in a JavaReadmeTest.java class
+
+* Ensured README.md examples would compile/run by testing code in a JavaReadmeTest.java class
+
+* Ensured README.md examples would compile/run by testing code in a JavaReadmeTest.java class
+
+* Ensured README.md examples would compile/run by testing code in a JavaReadmeTest.java class
+
+* Ensured README.md examples would compile/run by testing code in a JavaReadmeTest.java class
+
+* Ensured README.md examples would compile/run by testing code in a JavaReadmeTest.java class
+
+* Ensured README.md examples would compile/run by testing code in a JavaReadmeTest.java class
+
+* Ensured README.md examples would compile/run by testing code in a JavaReadmeTest.java class
+
+* Ensured README.md examples would compile/run by testing code in a JavaReadmeTest.java class
+
+* Ensured README.md examples would compile/run by testing code in a JavaReadmeTest.java class
+
+* Testing coveralls failure fix for JavaReadmeTest (unnecessary for coverage)
+
+* Message* API refactoring cleanup
+
+* Refactored SignatureAlgorithm(s) concept as a new DigestAlgorithm hierarchy to support non-keyed digests, as well as to reflect correct cryptographic taxonomy.  Renamed SignatureAlgorithms utility class to JwsAlgorithms.
+
+* - Added JwkThumbprint and JWK Thumbprint URI support
+- Fixed various copyright headers
+
+* Updated README with JWK examples
+
+* - Added logic and test to ensure Parser builder does not allow both a signature verification key and SigningKeyResolver to be configured.
+- Updated README code example, and added test for verification
+
+* - Added proactive checks to ensure PublicKey instances cannot be specified on JwtBuilder to create digital signatures
+- Added additional tests to ensure that Password instances cannot be used with Mac algorithm instances (HS256, HS384, HS512, etc)
+
+* minor edit to reflect latest # of test cases
+
+* Minor JavaDoc improvement
+
+* Disabled parsing of unsecured compressed payloads by default, with a JwtParserBuilder#enableUnsecuredDecompression method added for override if necessary.
+
+* Refactored JcaTemplate to avoid reflection
+
+* minor readme clarification
+
+* Edwards Curve keys checkpoint
+
+* Edwards Curve keys and related functionality checkpoint.  Added lots of tests.
+
+* Edwards Curve keys and related functionality checkpoint.  Reached 100% code coverage.
+
+* Addressed EdwardsCurve differences (and a JDK 11 PKCS8 encoding bug) between JDK versions (1.7 through 15+).
+
+* Addressed EdwardsCurve differences (and a JDK 11 PKCS8 encoding bug) between JDK versions (1.7 through 18).
+
+* Adding --add-opens lines to surefire/test config to avoid unnecessary build warnings
+
+* Improved Edwards Key encoding error checks
+
+* added some code to test errors in CI
+
+* added some code to test errors in CI
+
+* added some code to test errors in CI
+
+* added some code to test errors in CI
+
+* added some code to test errors in CI
+
+* added some code to test errors in CI
+
+* added some code to test errors in CI
+
+* added some code to test errors in CI
+
+* added some code to test errors in CI
+
+* added some code to test errors in CI
+
+* added some code to test errors in CI
+
+* added some code to test errors in CI
+
+* added some code to test errors in CI
+
+* Improved Field/FieldBuilder implementation to make it more robust and catch type errors.  JwkBuilder/Factory refactoring is likely to follow on subsequent commits.
+
+* Updating CI config to use the Oracle no-fee JDK builds
+
+* Updating CI config to use the Oracle no-fee JDK builds
+
+* Updating CI config to use the Oracle no-fee JDK builds
+
+* JavaDoc fixes
+
+* JavaDoc fixes
+
+* JavaDoc fixes
+
+* Ensured license headers are updated with correct dates based on git history, as well as ensured this is enforced in CI
+
+* fixed various build warnings and javadoc errors
+
+* Maven license plugin config cleanup. Removed now-unused header_format.xml file.
+
+* fixed javadoc error causing build failures
+
+* Changed Algorithms + Bridge concept to allow nested inner classes for simpler authoring all stemming from an 'Algorithms' class (easier to find algorithms via code completion than knowing off the top of your head which *Algorithms classes to reference).
+
+* Added license headers
+
+* Moved JwsAlgorithms to an inner class of Algorithms.  Will rename to `StandardSecureDigestAlgorithms` to maintain the convention used with the other Algorithms inner classes.
+
+* Extracting Algorithms inner classes up a level - cleaner/easier to maintain, document and reference as JavaDoc links.
+
+* Extracting Algorithms inner classes up a level - cleaner/easier to maintain, document and reference as JavaDoc links.  Renamed JwsAlgorithms to StandardSecureDigestAlgorithms to retain the JDK 'Standard*' convention.
+
+* Removed Algorithms class in favor of direct `Standard*` `Registry` references in `Jwts` and `Jwks` helper classes to keep the references 'close' to where they are used the most.
+
+* Minor README.md documentation updates.
+
+* Copying over 6e74486 to test on the jwe branch
+
+* Ensured CI license-check build pulls full (non-shallow) git history to perform full year checks.
+
+* JavaDoc + impl + test checkpoint
+
+* JavaDoc + impl + test checkpoint. Returned to 100% code coverage
+
+* JavaDoc + impl + test checkpoint. Returned to 100% code coverage
+
+* - Ensured Edwards Curve keys (X25519 and X448) worked with ECDH-ES algorithms
+- Ensured JWT Header ephemeral PublicKey ('epk' field) could be any Public JWK, not just an EcPublicJwk
+- Updated README.md to ensure the installation instructions for uncommenting BouncyCastle were a little less confusing (having commented out stuff be at the end of the code block so it couldn't be confused with other lines)
+
+* Ensured correct message assertion on all JDKs (value was different on JDK 15 and later)
+
+* Ensured correct message assertion on all JDKs (value was different on JDK 15 and later)
+
+* - enabled more IANA algorithms in StandardHashAlgorithms
+- JavaDoc update
+
+* - JavaDoc fixes/enhancements
+- Fixed erroneous README.md method name reference
+- ensured DefaultJwkContext#getName() supports Octet keys as well.
+
+* - JavaDoc fixes/enhancements
+
+* - JavaDoc fixes/enhancements required to pass the build on later JDKs
+
+* Minor JavaDoc typo fix
+
+* Finished implementing all [RFC 8037](https://www.rfc-editor.org/rfc/rfc8037) test vectors in the Appendix
+
+* Removed accidentally-committed visibility modifier
+
+* Added copyright header
+
+* Enabled PublicKey derivation from Edwards curve PrivateKey
+
+* Enabled PublicKey derivation from Edwards curve PrivateKey.  Updated documentation and code example showing this.
+
+* Enabled PublicKey derivation from Edwards curve PrivateKey.  Updated documentation and code example showing this.
+
+* Doc update to reference Octet JWK RFC.
+
+* Minor JavaDoc fix
+
+* Fixed OctetPrivateJwk discrepancy with generic parameter ordering (compared to other PrivateJwk interfaces)
+
+* Changed Jwts.header to Jwts.unprotectedHeader, and Jwts.headerBuilder is now Jwts.header
+
+---------
+
+Co-authored-by: sonatype-lift[bot] <37194012+sonatype-lift[bot]@users.noreply.github.com>
+Co-authored-by: Brian Demers <bdemers@apache.org>

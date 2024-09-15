@@ -1,0 +1,11 @@
+2e69497fa7b1444632c6dadb64a4a82e18478ee6
+tomcat
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+When running under a security manager and using sendfile, validate sendfile attributes to prevent sendfile being used to bypass the security manager.
+Part of the fix for CVE-2011-2526
+
+git-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@1146005 13f79535-47bb-0310-9956-ffa450edef68

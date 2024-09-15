@@ -1,0 +1,14 @@
+8367518578303aab2948d51f34a0b3106906b585
+flyway
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Bump version to flyway-9.10.2
+
+Please see the GH release for the release notes
+
+Fix migration resolvers not handling instances - fixes #3581
+
+Update AWS dependency to resolve CVE-2022-41915

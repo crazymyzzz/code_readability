@@ -1,0 +1,24 @@
+00db8d5f5f9defc84d5fc1871f78acc8ccde0380
+flyway
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Bump version to flyway-10.11.0
+
+Please see the GH release for the release notes
+
+Add stream configuration for ClassPath SQL Migrations
+
+Update AWS S3 dependency to fix CVE-2024-29025
+
+make upgrade message less alarming
+
+Update ErrorCode and ErrorOutput to allow extending in plugins
+
+Closes #3860 Remove unused methods in ClassUtils and remove need for `java.desktop`
+
+set property to hide warning from polyglot engine
+
+Create `flyway.communityDBSupportEnabled` to turn off community db support database types if desired

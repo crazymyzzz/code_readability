@@ -1,0 +1,24 @@
+4888d9c06425c3e63b7f36fd49cb29ec45db71f4
+flyway
+-------------------------------------------------------------------------------------------------
+Already existing java file: 
+ []
+
+-------------------------------------------------------------------------------------------------
+Bump version to flyway-9.22.3
+
+Please see the GH release for the release notes
+
+Upgrade software.amazon.awssdk:s3@2.20.158 to software.amazon.awssdk:s3@2.20.159 to fix CWE-295
+
+Upgrade software.amazon.awssdk:s3@2.20.159 to software.amazon.awssdk:s3@2.20.160 to fix CWE-295
+
+upgrade AWS Java SDK to 2.20.161
+
+Keep software.amazon.awssdk:s3 on latest 2.20.X release to get fix for CVE-2023-4586
+
+[Upgrade software.amazon.awssdk:s3@2.20.94 to software.amazon.awssdk:s3@2.20.158 to fix CWE-295
+
+upgrade aws-secretsmanager-jdbc to 2.0.0
+
+update newest supported Snowflake version
